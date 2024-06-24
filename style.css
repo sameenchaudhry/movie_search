@@ -348,6 +348,7 @@ margin-left: 10px;
 }
 .detail-content{
   width: 90%;
-  height: fit-content;
+  height: 70%;
+  max-heigth:500px;
 }
 }
