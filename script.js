@@ -88,27 +88,19 @@ const showErrorMessage = (message) => {
     movieBox.innerHTML = `<div class="error-message">${message}</div>`;
 };
 
-// Event listener for closing the modal
+// Event listener for closing the popup
 closeModalBtn.onclick = function () {
     modal.style.display = "none";
 };
 
-// Event listener for clicking outside the modal to close it
+// Event listener for clicking outside the popup to close it
 window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
 };
 
-// document.querySelector("#search-input").addEventListener("keyup", function (event) {
-//     if (event.target.value !== "") {
-//         getMovies(search_api + event.target.value);
-//     } else {
-//         getMovies(api_url);
-//     }
-// });
-
-
+//search button
 document.querySelector("#search-button").addEventListener("click", function () {
     const query = document.querySelector("#search-input").value.trim();
     if (query !== "") {
@@ -117,11 +109,10 @@ document.querySelector("#search-button").addEventListener("click", function () {
         getMovies(api_url);
     }
 });
-
+//clear search input and reload page
 searchInput.addEventListener("input", function () {
     if (searchInput.value === "") {
         getMovies(api_url); 
     }
 });
 getMovies(api_url);
-
